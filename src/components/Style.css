@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+*{
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* LOGIN PAGE STYLING */
+
+.form{
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: navy;
+    color: white;
+}
+.emailText{
+    margin-right: 280px;
+    font-size: 20px;
+}
+.mailbox{
+    margin-left: 40px;
+    margin: 20px;
+}
+.passwordText{
+    margin-right: 260px;
+    font-size: 20px;
+    
+}
+input.email{
+    width: 280px;
+    text-align: center;
+}
+input.email::placeholder{
+ text-align: center;
+}
+input.password{
+    width: 280px;
+    text-align: center;
+}
+input.password::placeholder{
+    text-align: center;
+}
+h2{
+    padding: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+   margin-right: 52px;
+}
+button{
+    padding: 10px;
+    margin: 20px;
+    width: 90px;
+}
+.password{
+    left: 2px;
+    position: relative;
+}
+.email{
+    right: 10px;
+    position: relative;  
+}
+/* SIGNUP PAGE STYLING */
+
+input.name::placeholder{
+    text-align: center;
+   }
+input.name{
+       width: 280px;
+       text-align: center;
+   }
+.nameText{
+    margin-right: 280px;
+    font-size: 20px;
+}   
+span.or{
+    right: 20%;
+    position: relative;
+}
+.link{
+    right: 20%;
+    position: relative;
+    font-size: 20px;
+    color: yellowgreen;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
