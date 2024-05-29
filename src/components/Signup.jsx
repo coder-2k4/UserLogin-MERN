@@ -1,19 +1,23 @@
 import React, { useState } from 'react'
 import './Style.css'
 import axios from 'axios'
-import {Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+
+//UseNavigate is used to jump to the oher page after an action is triggered.
 function Signup() {
     const [name,setName] = useState()
     const [email,setEmail] = useState()
-    const [password, setPassword] = useState()
+  const [password, setPassword] = useState()
+  const navigate = useNavigate()
   const handleclick = (e) => {
         try {
             e.preventDefault();
             axios.post('http://localhost:3000/signup', {
                 name, email,password
-              })
-              return <h5>Successfully!</h5>
+            })
+          navigate('/home')
           console.log('posted successfully')
+         
         }
 
         catch(error) {
@@ -23,7 +27,7 @@ function Signup() {
   
   return (
       <div>
-          <form className='form' >
+          <form className='form' onSubmit={handleclick}>
          <h2>Signup</h2>
     <div className="mailbox ">
      <span className='nameText'>Name</span>
@@ -47,7 +51,7 @@ function Signup() {
     <div className="mailbox">
      <span className='passwordText'>Password</span>
       <input
-        type="email"
+        type="password"
         className="form-control password"
         id="email"
         placeholder="Password"
@@ -55,7 +59,7 @@ function Signup() {
       />
     </div>
     <div className=" d-grid gap-2 col-2 ">
-      <button className="btn btn-primary" type="button" onClick={handleclick}>
+      <button className="btn btn-primary" type="submit" >
         Sign-up
       </button>
       <span className='or'>OR</span>
