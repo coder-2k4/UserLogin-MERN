@@ -1,8 +1,14 @@
 import React from 'react'
-
+import './Style.css'
 function Home() {
   return (
-    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. In amet repellendus ducimus ea accusamus ipsum reprehenderit aspernatur itaque non maiores.</div>
+    <div className='body'>
+ <div className='home'>
+        <img src='done.gif' alt="img"></img>
+        <h4 className='h4'>Logged-In Successfully</h4>
+    </div>
+    </div>
+   
   )
 }
 

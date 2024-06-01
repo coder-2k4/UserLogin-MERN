@@ -9,13 +9,16 @@ const user = require('./models/Users')
 connectToMongodb();
 app.use(express.json())
 
+
 app.post('/login', async(req, res) => {
     try {
         const { email, password } = req.body;
+        
         const member = await user.findOne({ email: email })
         if (member) {
             if (member.password === password) {
                 res.json("Success")
+                navigate('/home')
             }
             else {
                 res.json("password incorrect")
@@ -26,7 +29,7 @@ app.post('/login', async(req, res) => {
         }
     }
     catch (error) {
-     console.log(error)
+     console.log(error.message)
     }
 })
 app.post('/signup', (req, res)=>{

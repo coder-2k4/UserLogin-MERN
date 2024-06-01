@@ -11,26 +11,19 @@ function Login() {
    
     try {
       e.preventDefault();
-      const response = await axios.post('http://localhost:3000/login', {
+      console.log("Button Clicked")
+        axios.post('http://localhost:3000/login', {
         email,
         password,
       });
-
-      if (response.data === "Success") {
-        
-        navigate('/home');
-        console.log('Posted successfully');
-  }
-    
-      else {
-        console.log("failed")
-        console.log(response.data)
-     }
+      navigate('/home');
+ 
     } catch (error) {
       console.error(error);
     }
   };
   return (
+    <div className='body1'>
     <form className="form" onSubmit={handleclick} >
     <h2>Login</h2>
     <div className="mailbox ">
@@ -39,7 +32,7 @@ function Login() {
         type="email"
         className="form-control email"
         id="email"
-          placeholder="email"
+          placeholder="email" autoComplete='off'
           onChange={(e)=>setEmail(e.target.value)}
       />
     </div>
@@ -49,13 +42,13 @@ function Login() {
       <input
         type="password"
         className="form-control password"
-        id="email"
-          placeholder="Password"
+        id="password"
+          placeholder="Password" autoComplete='off'
           onChange={(e)=>setPassword(e.target.value)}
       />
     </div>
     <div className=" d-grid gap-2 col-2 ">
-      <button className="btn btn-primary" type="submit">
+      <button className="btn " type="submit">
         Login
       </button>
       <span className='or'>OR</span>
@@ -63,7 +56,8 @@ function Login() {
         Signup
       </Link>
     </div>
-  </form>
+      </form>
+      </div>
   )
 }
 
